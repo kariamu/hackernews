@@ -56,7 +56,7 @@ $(document).ready(function() {
 		    	html += '<div class="comments-section">';
 		    	html += '<div class="comments hide ' + story.id + '">';
 		    	html += '</div>';
-		    	html += '<div class="show-hide">Comments</div>';
+		    	html += '<div class="show-hide">Show Comments</div>';
 		    	html += '</div>';
 		    }
 		    html += '</div>';
@@ -98,8 +98,8 @@ $(document).ready(function() {
 		  	$(html).appendTo($parent);
 		}
 		$(".show-hide").on('click', function() {
-				console.log("showHide was clicked");
-			    $(this).parent().find(".comments").toggleClass("hide");
+				$(this).parent().find(".comments").toggleClass("hide");
+				$(this).html($(this).html() == 'Show Comments' ? 'Hide Comments' : 'Show Comments');
 			})
 	}
 	
