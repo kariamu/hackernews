@@ -51,7 +51,6 @@ $(document).ready(function() {
 		    html += '</div>';
 		    html += '<p>' + story.text + '</p>';
 		    html += '</article>';
-		    
 		    if(story.descendants!=undefined) {
 		    	html += '<div class="comments-section">';
 		    	html += '<div class="comments hide ' + story.id + '">';
@@ -62,14 +61,11 @@ $(document).ready(function() {
 		    	else {
 		    		html += '<div class="no-comments">No Comments</div>';
 		    	}
-		    	
 		    	html += '</div>';
 		    }
 		    html += '</div>';
 		    $(html).appendTo('.content');
-
 			var $comments = $(story.kids);
-
 			$comments.each(function() {
 			    $(this).each(function() {
 			  		$.ajax({
@@ -106,7 +102,7 @@ $(document).ready(function() {
 		$(".show-hide").on('click', function() {
 			$(this).parent().find(".comments").toggleClass("hide");
 			$(this).html($(this).html() == 'Show Comments' ? 'Hide Comments' : 'Show Comments');
-		})
+		});
 	}
 	
 });
