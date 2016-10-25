@@ -56,7 +56,13 @@ $(document).ready(function() {
 		    	html += '<div class="comments-section">';
 		    	html += '<div class="comments hide ' + story.id + '">';
 		    	html += '</div>';
-		    	html += '<div class="show-hide">Show Comments</div>';
+		    	if(story.descendants>=1) {
+		    		html += '<div class="show-hide">Show Comments</div>';
+		    	}
+		    	else {
+		    		html += '<div class="no-comments">No Comments</div>';
+		    	}
+		    	
 		    	html += '</div>';
 		    }
 		    html += '</div>';
@@ -98,9 +104,9 @@ $(document).ready(function() {
 		  	$(html).appendTo($parent);
 		}
 		$(".show-hide").on('click', function() {
-				$(this).parent().find(".comments").toggleClass("hide");
-				$(this).html($(this).html() == 'Show Comments' ? 'Hide Comments' : 'Show Comments');
-			})
+			$(this).parent().find(".comments").toggleClass("hide");
+			$(this).html($(this).html() == 'Show Comments' ? 'Hide Comments' : 'Show Comments');
+		})
 	}
 	
 });
